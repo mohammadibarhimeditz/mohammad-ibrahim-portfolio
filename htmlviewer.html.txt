@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mohammad Ibrahim — RNI Graphics Agency</title>
+    <meta name="description" content="Mohammad Ibrahim — Professional Video Editor & Graphic Designer. RNI Graphics Agency." />
+    <style>
+        :root{--bg:#0f1221;--card:#11121b;--muted:#a7adb8;--accent:#6e4bff;--accent-2:#00c2a8;--glass: rgba(255,255,255,0.03);--radius:14px;--max-width:1100px;color-scheme: dark}
+        *{box-sizing:border-box}
+        html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:#e8eef8;background:linear-gradient(180deg,var(--bg) 0%, #0b0c10 100%);}
+        a{color:inherit}
+        .wrap{max-width:var(--max-width);margin:36px auto;padding:28px;border-radius:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 6px 30px rgba(2,6,23,0.7)}
+        header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:28px}
+        .brand{display:flex;gap:14px;align-items:center}
+        .logo{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
+        .brand h1{font-size:18px;margin:0}
+        .nav{display:flex;gap:18px;align-items:center}
+        .nav a{padding:8px 12px;border-radius:10px;color:var(--muted);text-decoration:none;font-size:14px}
+        .cta{background:linear-gradient(90deg,var(--accent),#8a63ff);padding:10px 16px;border-radius:12px;color:white;font-weight:600;text-decoration:none}
+        .hero{display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:center;padding:28px 10px}
+        .hero-left h2{margin:0;color:#f5f7ff;font-size:28px}
+        .hero-left p{margin:12px 0;font-size:15px;color:var(--muted);line-height:1.5}
+        .buttons{display:flex;gap:12px;margin-top:18px}
+        .btn{padding:10px 14px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.03);color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:14px;cursor:pointer}
+        .btn.primary{background:linear-gradient(90deg,var(--accent),#8a63ff);box-shadow:0 8px 20px rgba(110,75,255,0.12);border:none}
+        .btn.secondary{background:rgba(255,255,255,0.05);border:none}
+        .hero-right{display:flex;flex-direction:column;gap:14px;align-items:center}
+        .profile-card{width:100%;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:16px;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;align-items:center}
+        .avatar{width:160px;height:160px;border-radius:14px;overflow:hidden;background:linear-gradient(180deg,#101018,#1a1425);display:flex;align-items:center;justify-content:center}
+        .avatar img{width:100%;height:100%;object-fit:cover}
+        .role{color:var(--muted);font-size:14px;margin-top:8px}
+        section{margin-top:26px}
+        .about{display:flex;gap:22px;align-items:flex-start;padding:18px;background:var(--card);border-radius:var(--radius);border:1px solid rgba(255,255,255,0.03)}
+        .about .text{flex:1}
+        .stats{display:flex;gap:18px;margin-top:14px}
+        .stat{background:var(--glass);padding:12px;border-radius:12px;text-align:center;width:110px}
+        .service-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+        .service{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+        .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+        .project{border-radius:12px;overflow:hidden;min-height:140px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));padding:12px;border:1px solid rgba(255,255,255,0.03)}
+        .team{margin-top:22px;display:flex;flex-direction:column;gap:14px}
+        .team-cards{display:flex;gap:12px;overflow:auto;padding-bottom:8px}
+        .member{min-width:210px;background:var(--glass);padding:12px;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,0.03)}
+        .member img{width:96px;height:96px;border-radius:10px;object-fit:cover}
+        .member h5{margin:8px 0 4px}
+        .member p{margin:0;color:var(--muted);font-size:13px}
+        .testimonials{margin-top:22px;padding:18px;background:linear-gradient(90deg, rgba(110,75,255,0.05), rgba(0,194,168,0.01));border-radius:12px}
+        .testimonial-slide{display:none}
+        .testimonial-slide.active{display:block}
+        .testimonial p{color:var(--muted)}
+        .dots{display:flex;gap:8px;justify-content:center;margin-top:12px}
+        .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.06);cursor:pointer}
+        .dot.active{background:var(--accent)}
+        .contact{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:26px}
+        .contact form{display:flex;flex-direction:column;gap:12px;padding:18px;background:var(--card);border-radius:12px}
+        input,textarea,select{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:#eaf0ff}
+        .meet{background:linear-gradient(90deg,var(--accent),#8a63ff);padding:16px;border-radius:12px;color:white}
+        .location{margin-top:22px;padding:18px;background:var(--card);border-radius:var(--radius);border:1px solid rgba(255,255,255,0.03)}
+        .payment-methods{margin-top:22px;padding:18px;background:var(--card);border-radius:var(--radius);border:1px solid rgba(255,255,255,0.03)}
+        .payment-methods h4{margin:0 0 10px}
+        .payment-methods ul{list-style:none;padding:0;margin:0;display:flex;gap:12px;flex-wrap:wrap}
+        .payment-methods li{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);padding:8px 12px;border-radius:8px}
+        .payment-methods li svg{width:20px;height:20px}
+        footer{margin-top:28px;padding:18px;text-align:center;color:var(--muted)}
+        @media (max-width:1000px){.hero{grid-template-columns:1fr}.hero-right{order:-1}.service-list{grid-template-columns:repeat(2,1fr)}.projects-grid{grid-template-columns:repeat(2,1fr)}.contact{grid-template-columns:1fr}}
+        @media (max-width:640px){.service-list{grid-template-columns:1fr}.projects-grid{grid-template-columns:1fr}.team-cards{gap:10px}}
+        .fade-up{opacity:0;transform:translateY(10px);transition:all 600ms cubic-bezier(.2,.9,.2,1)}
+        .fade-up.show{opacity:1;transform:none}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <div class="logo">RNI</div>
+                <div>
+                    <h1>Mohammad Ibrahim</h1>
+                    <div style="font-size:13px;color:var(--muted)">Professional Video Editor • Graphic Designer • Student</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#team">Team</a>
+                <a href="#testimonials">Reviews</a>
+                <a class="cta" href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-left">
+                    <h2>Hi, I'm <strong style="color:var(--accent)">Mohammad Ibrahim</strong></h2>
+                    <p>I am a professional video editor and graphic designer, and also a student. I have worked in the IT sector for many years and gained diverse experience. For the past **8 years** I have been delivering video editing and graphic design services to many clients, always aiming to provide the best service and client satisfaction.</p>
+                    <p style="color:var(--muted);margin-top:6px">I have collaborated with numerous organizations including **TechZafra Agency**, **Sandwip Production**, **Crafted Vision**, and **Media King**. I also run my own company, **RNI Graphics Agency**, where my team and I provide services such as video editing, graphic design, web design, web development and social media management.</p>
+                    <div class="buttons">
+                        <a class="btn primary" href="#projects">View Projects</a>
+                        <a class="btn" href="#contact">Get a Quote</a>
+                        <a class="btn secondary" href="#contact">Book a Meeting</a>
+                    </div>
+                </div>
+
+                <aside class="hero-right">
+                    <div class="profile-card fade-up" id="profileCard">
+                        <div class="avatar">
+                            <img src="https://via.placeholder.com/160x160.png?text=Ibrahim" alt="Mohammad Ibrahim" />
+                        </div>
+                        <div style="text-align:center;margin-top:10px">
+                            <div style="font-weight:700">Mohammad Ibrahim</div>
+                            <div class="role">Founder — RNI Graphics Agency<br>Lead Video Editor & Graphic Designer</div>
+                        </div>
+                        <div style="margin-top:12px;display:flex;gap:8px">
+                            <a class="btn primary" href="#contact">Hire Me</a>
+                            <a class="btn" href="mailto:hello@rni-graphics.com">Contact</a>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+            
+            <section id="services">
+                <h3 style="margin-top:22px">Services We Provide</h3>
+                <div class="service-list fade-up">
+                    <div class="service">
+                        <h4>Video Editing</h4>
+                        <p>Professional editing, color grading, motion graphics, sound design, and final delivery for YouTube, social platforms, commercials, and films. We deliver short-form and long-form content optimized per platform.</p>
+                        <div style="margin-top:8px;font-size:13px;color:var(--muted)">Includes: Premiere Pro, After Effects, DaVinci Resolve workflows</div>
+                    </div>
+                    <div class="service">
+                        <h4>Graphic Design</h4>
+                        <p>Brand identity, logos, social creatives, thumbnails, posters, and print-ready designs with strong visual storytelling and consistent branding.</p>
+                        <div style="margin-top:8px;font-size:13px;color:var(--muted)">Includes: Photoshop, Illustrator, Figma</div>
+                    </div>
+                    <div class="service">
+                        <h4>Web Design & Development</h4>
+                        <p>Design and development of modern responsive websites and landing pages. Clean HTML/CSS/JS, or CMS integration depending on project needs.</p>
+                        <div style="margin-top:8px;font-size:13px;color:var(--muted)">Responsive, performance-focused, SEO-friendly</div>
+                    </div>
+                    <div class="service">
+                        <h4>Social Media Management</h4>
+                        <p>Content planning, creative content, repurposing video for social platforms, and managing posting schedules to grow engagement.</p>
+                    </div>
+                    <div class="service">
+                        <h4>Creative Consultation</h4>
+                        <p>Concept development, scripting guidance, project planning, and production management to keep projects on time and on budget.</p>
+                    </div>
+                    <div class="service">
+                        <h4>Full Production Support</h4>
+                        <p>From pre-production (scripting & storyboarding) to final delivery (render & format), we handle the full pipeline.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="projects">
+                <h3 style="margin-top:22px">Selected Projects</h3>
+                <div class="projects-grid fade-up" id="projectsGrid">
+                    <div class="project">
+                        <strong>Homey App — UI/UX & Promo</strong>
+                        <p style="color:var(--muted);font-size:13px;margin-top:8px">Mobile promo video, UI presentation, and short social clips for product launch.</p>
+                    </div>
+                    <div class="project">
+                        <strong>Sandwip Production — Short Film Edit</strong>
+                        <p style="color:var(--muted);font-size:13px;margin-top:8px">Full editorial cut, color grading, and final sound mix for a short film project.</p>
+                    </div>
+                    <div class="project">
+                        <strong>Crafted Vision — Brand Refresh</strong>
+                        <p style="color:var(--muted);font-size:13px;margin-top:8px">Logo redesign, brand guidelines, and social templates for a creative agency.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="team" class="team">
+                <h3 style="margin-top:22px">Our Team</h3>
+                <div class="team-cards fade-up" id="teamCards">
+                    <div class="member">
+                        <img src="https://via.placeholder.com/120x120.png?text=Ibrahim" alt="Mohammad Ibrahim">
+                        <h5>Mohammad Ibrahim</h5>
+                        <p>Founder — Lead Video Editor & Designer</p>
+                    </div>
+                    <div class="member">
+                        <img src="https://via.placeholder.com/120x120.png?text=Araf" alt="Araf">
+                        <h5>Araf</h5>
+                        <p>Senior Video Editor</p>
+                    </div>
+                    <div class="member">
+                        <img src="https://via.placeholder.com/120x120.png?text=Sumaiya" alt="Sumaiya">
+                        <h5>Sumaiya</h5>
+                        <p>Graphic Designer</p>
+                    </div>
+                    <div class="member">
+                        <img src="https://via.placeholder.com/120x120.png?text=Rafi" alt="Rafi">
+                        <h5>Rafi</h5>
+                        <p>Web Developer</p>
+                    </div>
+                    <div class="member">
+                        <img src="https://via.placeholder.com/120x120.png?text=Naima" alt="Naima">
+                        <h5>Naima</h5>
+                        <p>Social Media Manager</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="testimonials" class="testimonials">
+                <h3>Client Reviews</h3>
+                <div class="testimonial-slide active" data-index="0">
+                    <p>"Mohammad and his team delivered a fantastic edit on a tight deadline. Professional, clear communication and great final quality."</p>
+                    <div style="margin-top:10px;font-weight:600">— TechZafra Agency</div>
+                </div>
+                <div class="testimonial-slide" data-index="1">
+                    <p>"Excellent work on our short film. The color grade and pacing were perfect."</p>
+                    <div style="margin-top:10px;font-weight:600">— Sandwip Production</div>
+                </div>
+                <div class="testimonial-slide" data-index="2">
+                    <p>"Creative, punctual and easy to work with. RNI Graphics helped refresh our brand visuals."</p>
+                    <div style="margin-top:10px;font-weight:600">— Crafted Vision</div>
+                </div>
+                <div class="dots" id="dots">
+                    <div class="dot active" data-dot="0"></div>
+                    <div class="dot" data-dot="1"></div>
+                    <div class="dot" data-dot="2"></div>
+                </div>
+            </section>
+
+            <section id="contact" class="contact">
+                <div>
+                    <h3>Contact & Project Brief</h3>
+                    <form id="contactForm">
+                        <input name="name" placeholder="Your name" required />
+                        <input name="email" type="email" placeholder="Email" required />
+                        <select name="service">
+                            <option value="video">Video Editing</option>
+                            <option value="graphic">Graphic Design</option>
+                            <option value="web">Web Design & Development</option>
+                            <option value="social">Social Media Management</option>
+                        </select>
+                        <textarea name="message" rows="5" placeholder="Project details... (timeline, budget, deliverables)"></textarea>
+                        <div style="display:flex;gap:10px">
+                            <button class="btn primary" type="submit">Send Message</button>
+                            <button class="btn secondary" type="button" id="bookMeeting">Book a Meeting</button>
+                        </div>
+                        <div id="formStatus" style="color:var(--muted);font-size:13px;margin-top:8px"></div>
+                    </form>
+                </div>
+
+                <aside>
+                    <div class="meet">
+                        <h4>Let's create something amazing</h4>
+                        <p style="color:rgba(255,255,255,0.9)">Schedule a quick 20–30 minute call to discuss your project. Choose a time and we'll email a confirmation.</p>
+                        <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
+                            <input id="meetingName" placeholder="Your name" />
+                            <input id="meetingEmail" placeholder="Email" />
+                            <input id="meetingDate" type="datetime-local" />
+                            <button id="confirmMeeting" class="btn primary">Request Meeting</button>
+                            <div id="meetingStatus" style="color:rgba(255,255,255,0.9);font-size:13px"></div>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+
+            <section id="location" class="location">
+                <h3>Our Location</h3>
+                <p><strong>RNI Graphics Agency</strong><br>
+                Chattogram, Chittagong Division, Bangladesh</p>
+                <div style="margin-top:15px;text-align:center">
+                    <a href="https://maps.google.com/?q=Chattogram,+Bangladesh" target="_blank" class="btn primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/></svg>
+                        View on Map
+                    </a>
+                </div>
+            </section>
+
+            <section id="payment" class="payment-methods">
+                <h3>Payment Methods</h3>
+                <p>We accept a variety of payment methods to make the process easy and secure for our clients.</p>
+                <ul>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                        Bank Transfer
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 6.5l-2.4 2.4"/><path d="M19 19H5c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2z"/><path d="M16 11.5l3.5-3.5"/><path d="M12.5 16l2.5-2.5"/></svg>
+                        Paypal
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4c-2.21 0-4-1.79-4-4s1.79-4 4-4h4V2L18 0l-4 2-2 4 4 2 2 4 4-2zm-8 4v2a2 2 0 0 0 2 2h2c1.1 0 2-.9 2-2v-2"/></svg>
+                        Other (e.g. Wise, Payoneer)
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            © <span id="year"></span> RNI Graphics Agency — Mohammad Ibrahim • All rights reserved
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const faders = document.querySelectorAll('.fade-up');
+        const showOnScroll = () => { const trigger = window.innerHeight * 0.85; faders.forEach(el=>{ const top = el.getBoundingClientRect().top; if(top < trigger) el.classList.add('show'); }) }
+        window.addEventListener('scroll', showOnScroll); showOnScroll();
+        const slides = document.querySelectorAll('.testimonial-slide'); const dots = document.querySelectorAll('.dot'); let idx = 0; const setSlide = (i)=>{ slides.forEach(s=>s.classList.remove('active')); dots.forEach(d=>d.classList.remove('active')); slides[i].classList.add('active'); dots[i].classList.add('active'); idx = i; }
+        dots.forEach(d=>d.addEventListener('click',()=>setSlide(Number(d.dataset.dot)))); setInterval(()=>{ const next = (idx+1) % slides.length; setSlide(next); },6000);
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e)=>{ e.preventDefault(); const form = new FormData(contactForm); const name = form.get('name'); const service = form.get('service'); const email = form.get('email'); const message = form.get('message'); const subject = encodeURIComponent('Project Inquiry: ' + service + ' — ' + name); const body = encodeURIComponent(message + '\n\nClient email: ' + email); window.open('mailto:hello@rni-graphics.com?subject=' + subject + '&body=' + body, '_blank'); document.getElementById('formStatus').textContent = 'Opening your email client — if it does not open, please email hello@rni-graphics.com'; });
+        document.getElementById('bookMeeting').addEventListener('click', ()=>{ document.getElementById('meetingName').focus(); document.getElementById('meetingStatus').textContent = 'Enter your details on the right to request a meeting.'; });
+        document.getElementById('confirmMeeting').addEventListener('click', ()=>{ const name = document.getElementById('meetingName').value.trim(); const email = document.getElementById('meetingEmail').value.trim(); const date = document.getElementById('meetingDate').value; if(!name || !email || !date){ document.getElementById('meetingStatus').textContent = 'Please fill all fields.'; return; } const subj = encodeURIComponent('Meeting Request — ' + name); const body = encodeURIComponent('Please confirm meeting on: ' + date + '\n\nClient: ' + name + '\nEmail: ' + email); window.open('mailto:hello@rni-graphics.com?subject=' + subj + '&body=' + body, '_blank'); document.getElementById('meetingStatus').textContent = 'Meeting request created — check your email client to send.'; });
+        (function(){ let usingMouse = false; window.addEventListener('mousedown', ()=>usingMouse=true); window.addEventListener('keydown', (e)=>{ if(e.key === 'Tab') usingMouse=false; }); document.body.addEventListener('focusin', (e)=>{ if(!usingMouse) e.target.style.outline = '2px solid rgba(110,75,255,0.18)'; }); document.body.addEventListener('focusout', (e)=>{ e.target.style.outline = ''; }); })();
+    </script>
+</body>
+</html>
